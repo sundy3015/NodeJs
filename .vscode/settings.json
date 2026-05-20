@@ -1,0 +1,6 @@
+{
+    "editor.foldingImportsByDefault": true,
+    "typescript.preferences.importModuleSpecifierEnding": "js",
+    "typescript.preferences.importModuleSpecifier": "relative",
+    "svn.ignoreMissingSvnWarning": true
+}

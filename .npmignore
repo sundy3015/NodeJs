@@ -1,0 +1,13 @@
+# Source code
+src
+
+#local .vscode cfg
+.vscode
+
+#github配置
+.github
+
+.gitattributes
+
+#ts配下
+tsconfig.json

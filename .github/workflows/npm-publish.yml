@@ -1,0 +1,32 @@
+name: push-to-npm-package
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 拉取代码
+      uses: actions/checkout@v3
+
+    - name: 安装NodeJS
+      uses: actions/setup-node@v3
+      with:
+        node-version: '21' # 你可以指定你需要的 Node.js 版本
+
+    - name: 安装NodeJS依赖
+      run: npm install
+
+    - name: 构建TS
+      run: npm run build:ci # 如果你的项目有构建步骤
+
+    - name: 登入npm
+      run: npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
+
+    - name: 推送npm包
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      run: |
+        npm publish --access=public
