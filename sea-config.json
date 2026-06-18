@@ -1,0 +1,6 @@
+{
+  "main": "./lib/index.js", 
+  "output": "index.exe",
+  "mainFormat": "module",
+  "disableExperimentalSEAWarning": true
+}
