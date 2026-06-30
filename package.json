@@ -8,7 +8,9 @@
     "build": " tsc --watch",
     "build:exe": "node --build-sea sea-config.json",
     "build:ci": "node  lib/index.js > out.log 2> error.log",
-    "test": " cls&&node --env-file=.env --watch lib/index.js sundy",
+    "test": "cls&&node lib/index.js",
+    "test:js": " cls&&node --env-file=.env --watch lib/index.js sundy",
+    "test:ts": " cls&&tsx watch ./src/index.ts",
     "start": " cls&&node --env-file=.env --watch lib/index.js sundy",
     "npmjs": "npm config set registry https://registry.npmjs.org/",
     "mirror": "npm config set registry https://registry.npmmirror.com",
@@ -19,6 +21,8 @@
   "devDependencies": {
     "@types/node": "^25.9.1",
     "esbuild": "^0.28.1",
+    "npx": "^10.2.2",
+    "tsx": "^4.22.4",
     "typescript": "^6.0.3"
   }
 }
